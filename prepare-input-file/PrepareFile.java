@@ -62,13 +62,9 @@ public class PrepareFile {
       for (int i = 0; i < splitWord.length; i++) {
         letters.add(splitWord[i]);
 
-        if ( !Character.isLetter(splitWord[i]) ) {  //isLetter OR !isDigit
-          iter.remove(); // Remove it! 
-          break; // If the word is removed due to any symbol not being a letter, there's no reason to continue looping over the word
-        }
-        else if (letters.size() != i+1) { 
-          iter.remove(); 
-          break;
+        if ( !Character.isLetter(splitWord[i]) || letters.size() != i+1 ) {  //isLetter OR !isDigit
+          iter.remove(); // Remove the word! 
+          break; // If the word is removed there's no reason to continue looping over the word
         }
       }
     }
