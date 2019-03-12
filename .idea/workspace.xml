@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dba4e23c-dc17-4ffe-aadb-f35323e93f4b" name="Default Changelist" comment="" />
+    <list default="true" id="dba4e23c-dc17-4ffe-aadb-f35323e93f4b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta/importedword.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta/letter.csv" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +14,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modulopgave2.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/dal/WordRepositoryV2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="26" column="62" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,6 +49,9 @@
       <find>reposit</find>
       <find>query =</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,7 +75,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1614" />
@@ -60,41 +86,48 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Modulopgave-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Modulopgave-2" type="462c0819:PsiDirectoryNode" />
+              <item name="modulopgave2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Modulopgave-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Modulopgave-2" type="462c0819:PsiDirectoryNode" />
+              <item name="modulopgave2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Modulopgave-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Modulopgave-2" type="462c0819:PsiDirectoryNode" />
+              <item name="modulopgave2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Modulopgave-2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Modulopgave-2" type="462c0819:PsiDirectoryNode" />
+              <item name="modulopgave2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
               <item name="client1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="modulopgave2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modulopgave2" type="462c0819:PsiDirectoryNode" />
+              <item name="dal" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552390361064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552398335465" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/Connector J 8.0" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -118,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Application.application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.modulopgave2.client2.Application" />
       <module name="Modulopgave2" />
@@ -162,8 +195,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="Application.application" />
+        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -182,8 +215,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25799572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -192,7 +226,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34019503" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34019503" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -250,14 +284,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/Main.java" />
-    <entry file="file://$PROJECT_DIR$/Modulopgave2.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/model/Crossword.java" />
     <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/service/WordImporterV2.java" />
     <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/dal/LetterRepository.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -354,13 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/dal/WordRepositoryV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/dal/WordRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -375,6 +394,20 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modulopgave2.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/dal/WordRepositoryV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="62" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="62" />
         </state>
       </provider>
     </entry>
