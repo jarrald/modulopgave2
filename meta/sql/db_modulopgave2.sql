@@ -1,6 +1,8 @@
 USE modulopgave2;
 
-ALTER DATABASE modulopgave2 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+#DROP DB
+DROP DATABASE IF EXISTS modulopgave2;
+CREATE DATABASE `modulopgave2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
 
 # DROP TABLES
 DROP TABLE IF EXISTS word_letter;
