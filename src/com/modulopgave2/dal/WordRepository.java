@@ -12,12 +12,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class WordRepository implements Repository<Word>
+public class WordRepository extends RepositoryBase<Word>
 {
     public static String DATABASENAME = "modulopgave2";
 
 
-    @Deprecated
     @Override
     public Word create(Word entity) throws Exception {
         final String QUERY = "INSERT IGNORE INTO word (Value) VALUES (?)";
