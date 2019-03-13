@@ -1,5 +1,5 @@
 # SELECT HORIZONTAL & VERTICAL WORDS [0;2]
-SELECT
+SELECT DISTINCT
 	0 AS X, 0 AS Y, 'horizontal' AS 'Direction', word_h_0_0.Value AS Value,
     0 AS X, 0 AS Y, 'vertical' AS 'Direction', word_v_0_0.Value AS Value,
     0 AS X, 1 AS Y, 'horizontal' AS 'Direction', word_h_0_1.Value AS Value,
