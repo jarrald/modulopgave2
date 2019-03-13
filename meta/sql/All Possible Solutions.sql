@@ -1,4 +1,4 @@
-# SELECT HORIZONTAL & VERTICAL WORDS
+# SELECT HORIZONTAL & VERTICAL WORDS [0;2]
 SELECT
 	0 AS X, 0 AS Y, 'horizontal' AS 'Direction', word_h_0_0.Value AS Value,
     0 AS X, 0 AS Y, 'vertical' AS 'Direction', word_v_0_0.Value AS Value,
