@@ -26,11 +26,9 @@ public class Application {
         // find words from criteria
         Collection<Word> wordList = wordRepositoryV2.find(criteria);
 
+        System.out.println("Words found: "+ wordList.size());
         // print found words
         Iterator<Word> it = wordList.iterator();
-        if(it.hasNext()) {
-            System.out.println("Words found: "+ wordList.size());
-        }
         while (it.hasNext()) {
             Word word = it.next();
             System.out.println(word.getValue());
