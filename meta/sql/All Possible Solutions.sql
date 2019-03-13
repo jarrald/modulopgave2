@@ -8,51 +8,74 @@ SELECT
     2 AS X, 0 AS Y, 'vertical' AS 'Direction', word_v_0_2.Value AS Value
 
 # GET LETTERS FOR HORIZONTAL WORD x: 0, y: 0
+# letter 1
 FROM	word_letter AS word_letter_h_0_0_1
+# letter 2
 JOIN	word_letter AS word_letter_h_0_0_2 ON word_letter_h_0_0_2.Word_Id = word_letter_h_0_0_1.Word_Id AND word_letter_h_0_0_2.Offset = 1
+# letter 3
 JOIN	word_letter AS word_letter_h_0_0_3 ON word_letter_h_0_0_3.Word_Id = word_letter_h_0_0_1.Word_Id AND word_letter_h_0_0_3.Offset = 2
 
 # GET LETTERS FOR VERTICAL WORD x: 0, y: 0
+# letter 1
 JOIN 	word_letter AS word_letter_v_0_0_1 ON word_letter_v_0_0_1.Letter_Id = word_letter_h_0_0_1.Letter_Id AND word_letter_v_0_0_1.Offset = 0 AND
+		# to get a unique word
 		word_letter_v_0_0_1.Word_Id != word_letter_h_0_0_1.Word_Id
+# letter 2
 JOIN 	word_letter AS word_letter_v_0_0_2 ON word_letter_v_0_0_2.Word_Id = word_letter_v_0_0_1.Word_Id AND word_letter_v_0_0_2.Offset = 1
+# letter 3
 JOIN 	word_letter AS word_letter_v_0_0_3 ON word_letter_v_0_0_3.Word_Id = word_letter_v_0_0_1.Word_Id AND word_letter_v_0_0_3.Offset = 2
 
 # GET LETTERS FOR HORIZONTAL WORD x: 0, y: 1
+# letter 1
 JOIN 	word_letter AS word_letter_h_0_1_1 ON word_letter_h_0_1_1.Letter_Id = word_letter_v_0_0_2.Letter_Id AND word_letter_h_0_1_1.Offset = 0 AND
+		# to get a unique word
 		word_letter_h_0_1_1.Word_Id != word_letter_h_0_0_1.Word_Id AND
         word_letter_h_0_1_1.Word_Id != word_letter_v_0_0_1.Word_Id
+# letter 2
 JOIN	word_letter AS word_letter_h_0_1_2 ON word_letter_h_0_1_2.Word_Id = word_letter_h_0_1_1.Word_Id AND word_letter_h_0_1_2.Offset = 1
+# letter 3
 JOIN	word_letter AS word_letter_h_0_1_3 ON word_letter_h_0_1_3.Word_Id = word_letter_h_0_1_1.Word_Id AND word_letter_h_0_1_3.Offset = 2
 
 # GET LETTERS FOR VERTICAL WORD x: 1, y: 0
+# letter 1
 JOIN	word_letter AS word_letter_v_1_0_1 ON word_letter_v_1_0_1.Letter_Id = word_letter_h_0_0_2.Letter_Id AND word_letter_v_1_0_1.Offset = 0 AND
+		# to get a unique word
 		word_letter_v_1_0_1.Word_Id != word_letter_h_0_0_1.Word_Id AND
         word_letter_v_1_0_1.Word_Id != word_letter_v_0_0_1.Word_Id AND
         word_letter_v_1_0_1.Word_Id != word_letter_h_0_1_1.Word_Id
+# letter 2
 JOIN 	word_letter AS word_letter_v_1_0_2 ON word_letter_v_1_0_2.Word_Id = word_letter_v_1_0_1.Word_Id AND word_letter_v_1_0_2.Offset = 1 AND
 		word_letter_v_1_0_2.Letter_Id = word_letter_h_0_1_2.Letter_Id
+# letter 3
 JOIN 	word_letter AS word_letter_v_1_0_3 ON word_letter_v_1_0_3.Word_Id = word_letter_v_1_0_1.Word_Id AND word_letter_v_1_0_3.Offset = 2
 
 # GET LETTERS FOR HORIZONTAL WORD x: 0, y: 2
+# letter 1
 JOIN	word_letter AS word_letter_h_0_2_1 ON word_letter_h_0_2_1.Letter_Id = word_letter_v_0_0_3.Letter_Id AND word_letter_h_0_2_1.Offset = 0 AND
+		# to get a unique word
 		word_letter_h_0_2_1.Word_Id != word_letter_v_1_0_1.Word_Id AND
         word_letter_h_0_2_1.Word_Id != word_letter_h_0_0_1.Word_Id AND
         word_letter_h_0_2_1.Word_Id != word_letter_v_0_0_1.Word_Id AND
         word_letter_h_0_2_1.Word_Id != word_letter_h_0_1_1.Word_Id
+# letter 2
 JOIN 	word_letter AS word_letter_h_0_2_2 ON word_letter_h_0_2_2.Word_Id = word_letter_h_0_2_1.Word_Id AND word_letter_h_0_2_2.Offset = 1 AND
 		word_letter_h_0_2_2.Letter_Id = word_letter_v_1_0_3.Letter_Id
+# letter 3
 JOIN 	word_letter AS word_letter_h_0_2_3 ON word_letter_h_0_2_3.Word_Id = word_letter_h_0_2_1.Word_Id AND word_letter_h_0_2_3.Offset = 2
 
 # GET LETTERS FOR VERTICAL WORD x: 2, y: 0
+# letter 1
 JOIN	word_letter AS word_letter_v_2_0_1 ON word_letter_v_2_0_1.Letter_Id = word_letter_h_0_0_3.Letter_Id AND word_letter_v_2_0_1.Offset = 0 AND
+		# to get a unique word
 		word_letter_v_2_0_1.Word_Id != word_letter_h_0_2_1.Word_Id AND
 		word_letter_v_2_0_1.Word_Id != word_letter_v_1_0_1.Word_Id AND
         word_letter_v_2_0_1.Word_Id != word_letter_h_0_0_1.Word_Id AND
         word_letter_v_2_0_1.Word_Id != word_letter_v_0_0_1.Word_Id AND
         word_letter_v_2_0_1.Word_Id != word_letter_h_0_1_1.Word_Id
+# letter 2
 JOIN 	word_letter AS word_letter_v_2_0_2 ON word_letter_v_2_0_2.Word_Id = word_letter_v_2_0_1.Word_Id AND word_letter_v_2_0_2.Offset = 1 AND
 		word_letter_v_2_0_2.Letter_Id = word_letter_h_0_1_3.Letter_Id
+# letter 3
 JOIN 	word_letter AS word_letter_v_2_0_3 ON word_letter_v_2_0_3.Word_Id = word_letter_v_2_0_1.Word_Id AND word_letter_v_2_0_3.Offset = 2 AND
 		word_letter_v_2_0_3.Letter_Id = word_letter_h_0_2_3.Letter_Id
 
