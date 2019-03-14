@@ -1,7 +1,7 @@
 USE modulopgave2;
 
 # select words
-SELECT
+SELECT DISTINCT
 	(SELECT GROUP_CONCAT(Value) FROM word
 		WHERE	word.Id = connection_1_1.Word_Id
 		OR		word.Id = connection_2_1.Word_Id
@@ -140,4 +140,4 @@ JOIN word AS word_4 ON word_4.Id = connection_4_1.Word_Id
 JOIN word AS word_5 ON word_5.Id = connection_5_1.Word_Id
 JOIN word AS word_6 ON word_6.Id = connection_6_1.Word_Id*/
 
-GROUP BY Ident
+#GROUP BY Ident
