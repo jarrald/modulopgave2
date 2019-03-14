@@ -39,7 +39,7 @@ JOIN word_letter AS connection_1_1
 JOIN			word_letter AS connection_2_1
 				ON	connection_2_1.Letter_Id	=	connection_1_1.Letter_Id
                 AND connection_2_1.Offset		=	connection_1_1.Offset
-				AND connection_2_1.Word_Id		>	connection_1_1.Word_Id
+				AND connection_2_1.Word_Id		!=	connection_1_1.Word_Id
 
 # connection 1.2 -> 4.1
 JOIN word_letter AS connection_1_2
@@ -49,27 +49,33 @@ JOIN word_letter AS connection_4_1
 				ON	connection_4_1.Letter_Id = connection_1_2.Letter_Id
                 AND	connection_4_1.Offset = 0
                 # unique word
-                AND connection_4_1.Word_Id > connection_2_1.Word_Id
+				AND connection_4_1.Word_Id != connection_1_1.Word_Id
+                AND connection_4_1.Word_Id != connection_2_1.Word_Id
 
 # connection 1.3 -> 6.1
 JOIN		word_letter AS connection_1_3
 				ON	connection_1_3.Word_Id		=	connection_1_1.Word_Id
                 AND connection_1_3.Offset		=	2
 JOIN		word_letter AS connection_6_1
-				ON	connection_6_1.Letter_Id	 =	connection_1_3.Letter_Id
-                AND connection_6_1.Offset		 =	0
+				ON	connection_6_1.Letter_Id	=	connection_1_3.Letter_Id
+                AND connection_6_1.Offset		=	0
                 # unique word
-                AND connection_6_1.Word_Id		>	connection_4_1.Word_Id
+                AND connection_6_1.Word_Id		!=	connection_1_1.Word_Id
+                AND connection_6_1.Word_Id		!=	connection_2_1.Word_Id
+                AND connection_6_1.Word_Id		!=	connection_4_1.Word_Id
                 
 # connection 2.2 -> 3.1
 JOIN		word_letter AS connection_2_2
 				ON	connection_2_2.Word_Id		=	connection_2_1.Word_Id
                 AND connection_2_2.Offset		=	1
 JOIN		word_letter AS connection_3_1
-				ON	connection_3_1.Letter_Id	 =	connection_2_2.Letter_Id
-                AND connection_3_1.Offset		 =	0
+				ON	connection_3_1.Letter_Id	=	connection_2_2.Letter_Id
+                AND connection_3_1.Offset		=	0
                 # unique word
-                AND connection_3_1.Word_Id		>	connection_6_1.Word_Id
+                AND connection_3_1.Word_Id		!=	connection_1_1.Word_Id
+                AND connection_3_1.Word_Id		!=	connection_2_1.Word_Id
+                AND connection_3_1.Word_Id		!=	connection_4_1.Word_Id
+                AND connection_3_1.Word_Id		!=	connection_6_1.Word_Id
 
 
 # connection 2.3 -> 5.1
@@ -80,7 +86,11 @@ JOIN		word_letter AS connection_5_1
 				ON	connection_5_1.Letter_Id	=	connection_2_3.Letter_Id
                 AND connection_5_1.Offset		=	0
                 # unique word
-                AND connection_5_1.Word_Id		>	connection_6_1.Word_Id
+                AND connection_5_1.Word_Id		!=	connection_1_1.Word_Id
+                AND connection_5_1.Word_Id		!=	connection_2_1.Word_Id
+                AND connection_5_1.Word_Id		!=	connection_4_1.Word_Id
+                AND connection_5_1.Word_Id		!=	connection_6_1.Word_Id
+                AND connection_5_1.Word_Id		!=	connection_3_1.Word_Id
                 
                 
 # connection 3.2 -> 4.2
