@@ -2,21 +2,21 @@ USE modulopgave2;
 
 # select words
 SELECT DISTINCT
-	(SELECT GROUP_CONCAT(Value) FROM word
+	(SELECT GROUP_CONCAT(Id) FROM word
 		WHERE	word.Id = connection_1_1.Word_Id
 		OR		word.Id = connection_2_1.Word_Id
         OR		word.Id = connection_3_1.Word_Id
         OR		word.Id = connection_4_1.Word_Id
         OR		word.Id = connection_5_1.Word_Id
         OR		word.Id = connection_6_1.Word_Id
-		ORDER BY word.Value) AS Ident
+		ORDER BY word.Id ASC) AS Ident,
         
-	/*word_1.Value AS x0y0h,
+	word_1.Value AS x0y0h,
     word_2.Value AS x0y0v,
     word_3.Value AS x0y1h,
     word_4.Value AS x1y0v,
     word_5.Value AS x0y2h,
-    word_6.Value AS x2y0v*/
+    word_6.Value AS x2y0v
 
 
 # 1.1 -> 2.1   
@@ -134,10 +134,11 @@ JOIN		word_letter AS connection_6_3
                 
 
 # Join words
-/*JOIN word AS word_2 ON word_2.Id = connection_2_1.Word_Id
+JOIN word AS word_2 ON word_2.Id = connection_2_1.Word_Id
 JOIN word AS word_3 ON word_3.Id = connection_3_1.Word_Id
 JOIN word AS word_4 ON word_4.Id = connection_4_1.Word_Id
 JOIN word AS word_5 ON word_5.Id = connection_5_1.Word_Id
-JOIN word AS word_6 ON word_6.Id = connection_6_1.Word_Id*/
+JOIN word AS word_6 ON word_6.Id = connection_6_1.Word_Id
 
-#GROUP BY Ident
+GROUP BY Ident
+#ORDER BY word_1.Id ASC
