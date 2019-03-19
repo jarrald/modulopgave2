@@ -1,6 +1,4 @@
 import java.io.IOException;
-import java.io.File;
-import java.io.FileWriter;
 
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -52,12 +50,12 @@ public class PrepareFile {
 
   // Removes words with numbers and words with duplicate letters
   private void removeInvalidWords(Collection<String> cs) {
-    Iterator iter = cs.iterator();
+    var iter = cs.iterator();
 
     while ( iter.hasNext() ) {
-      String word = (String) iter.next();
+      var word = (String) iter.next();
       char[] splitWord = word.toCharArray();
-      Set<Character> letters = new HashSet<>();
+      var letters = new HashSet<>();
 
       for (int i = 0; i < splitWord.length; i++) {
         letters.add(splitWord[i]);
@@ -68,21 +66,24 @@ public class PrepareFile {
         }
       }
     }
-    writeCollectionToFile(words, "out3.txt" );
+    writeCollectionToFile(cs, "out3.txt" );
   }
 
   private void lowerCaseRemoveDuplicateWords() {
-    var fileIn = "3LetterWord_Unicode.txt";
+    //var fileIn = "3LetterWord_Unicode.txt";
+    var fileIn = "/home/lys/tmp/3LetterWord_Unicode.txt";
     try (
       var fr = new FileReader(fileIn);
       var br = new BufferedReader(fr);
-    )
-    {
+    ) {
 
       while ( br.ready() ) {
+        //System.out.println(br.readLine().length());
+        System.out.println(br.readLine().length());
+        System.exit(0);
         words.add( br.readLine().toLowerCase() ); // Lowercases and removes duplicates automatically by inserting into a Set
       }
-      System.out.println( words.size() );
+      // System.out.println( words.size() );
     }
     catch (IOException e) { System.out.println(e); }
   }
