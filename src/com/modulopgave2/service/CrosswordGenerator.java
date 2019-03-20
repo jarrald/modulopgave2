@@ -6,7 +6,7 @@ import com.modulopgave2.model.Word;
 
 import java.util.*;
 
-public class CrosswordFactory {
+public class CrosswordGenerator {
     List<Word> wordList;
     Crossword crossword;
 
@@ -15,7 +15,7 @@ public class CrosswordFactory {
 
 
 
-    public CrosswordFactory(Collection<Word> wordCollection, Crossword crossword) {
+    public CrosswordGenerator(Collection<Word> wordCollection, Crossword crossword) {
         this.wordList = new ArrayList<>(wordCollection);
         this.crossword = crossword;
 
