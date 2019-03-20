@@ -3,12 +3,27 @@ package com.modulopgave2.model;
 import com.modulopgave2.model.Word;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
 public class Crossword {
-    List<Word> horizontalWords;
-    List<Word> verticalWords;
+    Collection<Word> horizontalWords;
+    Collection<Word> verticalWords;
+
+    public Collection<Word> getHorizontalWords() {
+        return horizontalWords;
+    }
+    public void setHorizontalWords(Collection<Word> horizontalWords) {
+        this.horizontalWords = horizontalWords;
+    }
+
+    public Collection<Word> getVerticalWords() {
+        return verticalWords;
+    }
+    public void setVerticalWords(Collection<Word> verticalWords) {
+        this.verticalWords = verticalWords;
+    }
 
     public Crossword(List<Word> horizontalWords, List<Word> verticalWords) {
         this.horizontalWords = horizontalWords;
