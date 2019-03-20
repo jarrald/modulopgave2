@@ -1,14 +1,13 @@
 package com.modulopgave2.dal;
 
+import com.modulopgave2.model.Letter;
 import com.modulopgave2.model.Word;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class WordRepositoryV2 extends WordRepository
 {
@@ -56,6 +55,55 @@ public class WordRepositoryV2 extends WordRepository
 
 
         return entity;
+    }
+
+    @Override
+    public Collection<Word> list() throws Exception {
+        Set<Word> result = new HashSet<>();
+        Connection conn;
+        Statement stmt;
+        ResultSet res;
+
+        Statement stmt2;
+        ResultSet res2;
+
+        String query =
+                "SELECT * FROM word";
+        String query2 = "";
+
+        conn = ConnectionFactory.getConnection(DATABASENAME);
+        stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);//must be updateable
+        res = stmt.executeQuery(query);
+
+        while(res.next()) {
+            Word word = new Word(res.getInt("Id"), res.getString("Value"));
+
+            query2 = "SELECT wl.Id AS Id, wl.Offset AS Offset, l.Value AS Value FROM word_letter AS wl INNER JOIN letter AS l ON l.Id = wl.Letter_Id WHERE wl.Word_Id = " + word.getId() + " ORDER BY wl.Offset";
+
+            stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            res2 = stmt2.executeQuery(query2);
+
+            List<Letter> letters = new ArrayList<>();
+
+            while(res2.next()) {
+                letters.add(new Letter(res2.getInt("Id"), res.getString("Value").charAt(0), res2.getInt("Offset")));
+            }
+            word.setLetters(letters);
+
+            result.add(word);
+
+            //luk JDBC-objekter
+            if (res2!=null) res2.close();
+            if (stmt2!=null) stmt2.close();
+        }
+
+        //luk JDBC-objekter
+        if (res!=null) res.close();
+        if (stmt!=null) stmt.close();
+        if (conn!=null) conn.close();
+
+
+        return result;
     }
 
     @Override

@@ -3,34 +3,24 @@ package com.modulopgave2.client2;
 import com.modulopgave2.dal.Repository;
 import com.modulopgave2.dal.WordRepository;
 import com.modulopgave2.dal.WordRepositoryV2;
+import com.modulopgave2.model.Crossword;
 import com.modulopgave2.model.Letter;
 import com.modulopgave2.model.Word;
+import com.modulopgave2.service.CrosswordGenerator;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Application {
     public static void main(String[] args) throws Exception {
-        Repository<Word> wordRepositoryV2 = new WordRepositoryV2();
 
-        List<Letter> letterCri = new ArrayList<>();
-
-        letterCri.add(new Letter(0, 'h', 0));
-        letterCri.add(new Letter(0, 'u', 2));
-
-        Word word = new Word(0, "", letterCri);
-
-        Collection<Word> wordCollection = wordRepositoryV2.find(word);
-
-        Iterator<Word> it = wordCollection.iterator();
-        while (it.hasNext()) {
-
-        }
+        Repository<Word> wordRepository = new WordRepositoryV2();
+        Collection<Word> wordCollection = wordRepository.list();
 
 
+        CrosswordGenerator cwg = new CrosswordGenerator(wordCollection);
+        cwg.generateCrosswords(2);
 
+        System.out.println(cwg.getFoundCrosswords().size());
 
 
 

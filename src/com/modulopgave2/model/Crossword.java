@@ -9,73 +9,28 @@ import java.util.Objects;
 
 public class Crossword {
 
-    public enum Direction {
-        HORIZONTAL,
-        VERTICAL
-    }
+    char[][] grid;
 
-    List<Word> horizontalWords;
-    List<Word> verticalWords;
+    public char[][] getGrid() { return grid; }
+    public void setGrid(char[][] grid) { this.grid = grid; }
 
-    public List<Word> getHorizontalWords() {
-        return horizontalWords;
-    }
-    public void setHorizontalWords(List<Word> horizontalWords) {
-        this.horizontalWords = horizontalWords;
-    }
-
-    public List<Word> getVerticalWords() {
-        return verticalWords;
-    }
-    public void setVerticalWords(List<Word> verticalWords) {
-        this.verticalWords = verticalWords;
-    }
-
-    public int countRows() { return horizontalWords.size(); }
-    public int countColumns() { return horizontalWords.size(); }
-
-
-    public Crossword(List<Word> horizontalWords, List<Word> verticalWords) {
-        this.horizontalWords = horizontalWords;
-        this.verticalWords = verticalWords;
-    }
-
-    public Letter getLetter(int x, int y) {
-
-        Letter result = null;
-        Word word = null;
-
-        if((word = horizontalWords.get(y)) != null)
-            result = word.getLetter(x);
-        else if((word = verticalWords.get(x)) != null) {
-            result = word.getLetter(y);
-        }
-
-        return result;
+    public Crossword(char[][] grid) {
+        this.grid = grid;
     }
 
 
-    public void addWord(Direction dir, Word word) {
-        switch (dir) {
-            case HORIZONTAL:
-                horizontalWords.add(word);
-                break;
-            case VERTICAL:
-                verticalWords.add(word);
-                break;
-        }
+    public boolean hasCell(int x, int y) {
+        if((x >= 0 && x < grid.length)
+                && (y >= 0 && y < grid[x].length))
+            return true;
+        return false;
     }
 
-    public void removeWord(Direction dir, Word word) {
-        switch (dir) {
-            case HORIZONTAL:
-                if(horizontalWords.contains(word))
-                horizontalWords.remove(word);
-                break;
-            case VERTICAL:
-                if(verticalWords.contains(word))
-                    verticalWords.remove(word);
-                break;
-        }
+    public char getCell(int x, int y) {
+            return grid[x][y];
+    }
+
+    public void setCell(int x, int y, char value) {
+        grid[x][y] = value;
     }
 }
