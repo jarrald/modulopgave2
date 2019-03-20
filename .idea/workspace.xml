@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dba4e23c-dc17-4ffe-aadb-f35323e93f4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/java-version/StringHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-version/Crosswords.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-version/Crosswords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-version/CrosswordsGenerator2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/modulopgave2/client2/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/modulopgave2/client2/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/modulopgave2/model/Crossword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/modulopgave2/model/Crossword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/modulopgave2/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/modulopgave2/model/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-version/CrosswordsGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-version/CrosswordsGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,20 +18,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="493">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#812#813#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/java-version/run.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -44,20 +32,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/java-version/CrosswordsGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="459">
+              <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/java-version/StringHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -125,9 +104,9 @@
         <option value="$PROJECT_DIR$/src/com/modulopgave2/client2/Application.java" />
         <option value="$PROJECT_DIR$/src/com/modulopgave2/model/Crossword.java" />
         <option value="$PROJECT_DIR$/src/com/modulopgave2/model/Word.java" />
-        <option value="$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java" />
         <option value="$PROJECT_DIR$/java-version/StringHelper.java" />
         <option value="$PROJECT_DIR$/java-version/CrosswordGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java" />
         <option value="$PROJECT_DIR$/java-version/CrosswordsGenerator.java" />
       </list>
     </option>
@@ -212,7 +191,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553087798342" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553089026160" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/Connector J 8.0" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -523,29 +502,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/java-version/Crossword.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#3338#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/java-version/StringHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -582,15 +544,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/java-version/run.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-version/StringHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/modulopgave2/service/CrosswordFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/java-version/CrosswordsGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="459">
+          <caret line="39" column="24" lean-forward="true" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

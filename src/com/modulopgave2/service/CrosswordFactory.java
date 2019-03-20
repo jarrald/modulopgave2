@@ -7,7 +7,7 @@ import com.modulopgave2.model.Word;
 import java.util.*;
 
 public class CrosswordFactory {
-    Collection<Word> wordCollection;
+    List<Word> wordList;
     Crossword crossword;
 
     Set<String> usedWordCombos = new HashSet<>();
@@ -16,11 +16,12 @@ public class CrosswordFactory {
 
 
     public CrosswordFactory(Collection<Word> wordCollection, Crossword crossword) {
-        this.wordCollection = wordCollection;
+        this.wordList = new ArrayList<>(wordCollection);
         this.crossword = crossword;
-        Comparator<Word> compareById = (Word o1, Word o2) -> (o2.getId() - o1.getId());
 
-        Collections.sort((List) wordCollection, (Comparator<Word>) (Word w1, Word w2) -> w1.getId().compareTo( w2.getId() ));
+        // sort words by Id
+        Comparator<Word> compareById = (Word o1, Word o2) -> (o2.getId() - o1.getId());
+        Collections.sort(wordList, compareById);
     }
 
     public Crossword generateCrossword() {
@@ -28,12 +29,10 @@ public class CrosswordFactory {
 
 
 
-
-
         return result;
     }
 
     private boolean isCrosswordValid() {
-
+        return false;
     }
 }

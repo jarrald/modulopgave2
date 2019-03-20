@@ -23,9 +23,9 @@ public class CrosswordsGenerator {
             words.put(letter, new ArrayList<String>());
         }
         // Not immediately succeeding a-z in ASCII/UTF-8, so:
-    /*words.put(StringHelper.convert("æ", "ISO-8859-1", "UTF-8"), new ArrayList<String>());
-    words.put(StringHelper.convert("ø", "ISO-8859-1", "UTF-8"), new ArrayList<String>());
-    words.put(StringHelper.convert("å", "ISO-8859-1", "UTF-8"), new ArrayList<String>());*/
+    words.put(Character.valueOf(StringHelper.convert("æ", "ISO-8859-1", "UTF-8").charAt(0)), new ArrayList<String>());
+    words.put(Character.valueOf(StringHelper.convert("ø", "ISO-8859-1", "UTF-8").charAt(0)), new ArrayList<String>());
+    words.put(Character.valueOf(StringHelper.convert("å", "ISO-8859-1", "UTF-8").charAt(0)), new ArrayList<String>());
     }
 
     public void run() {
@@ -38,14 +38,11 @@ public class CrosswordsGenerator {
         ) {
 
             String line;
-            while ( br.ready() && (line = br.readLine()) != null ) {
-
-                System.out.println("l: " + line);
-
+            while (br.ready() && (line = br.readLine()) != null ) {
                 words.get( line.charAt(0)).add(line);
             }
         }
-        catch (IOException e) { System.out.println(e); }
+        catch (IOException e) { System.out.println(e); e.printStackTrace(); }
     }
 
     // Steps:
