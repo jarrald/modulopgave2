@@ -2,6 +2,7 @@ package com.modulopgave2.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class Word {
@@ -48,8 +49,16 @@ public class Word {
     }
 
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(value);
+    public Letter getLetter(int offset) {
+        Letter result = null;
+
+        Iterator<Letter> it = letters.iterator();
+        while (it.hasNext()) {
+            Letter letter = it.next();
+            if(letter.getOffset() == offset)
+                result = letter;
+        }
+
+        return result;
     }
 }
