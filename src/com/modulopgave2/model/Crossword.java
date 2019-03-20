@@ -8,30 +8,31 @@ import java.util.List;
 import java.util.Objects;
 
 public class Crossword {
-    Collection<Word> horizontalWords;
-    Collection<Word> verticalWords;
+    List<Word> horizontalWords;
+    List<Word> verticalWords;
 
-    public Collection<Word> getHorizontalWords() {
+    public List<Word> getHorizontalWords() {
         return horizontalWords;
     }
-    public void setHorizontalWords(Collection<Word> horizontalWords) {
+    public void setHorizontalWords(List<Word> horizontalWords) {
         this.horizontalWords = horizontalWords;
     }
 
-    public Collection<Word> getVerticalWords() {
+    public List<Word> getVerticalWords() {
         return verticalWords;
     }
-    public void setVerticalWords(Collection<Word> verticalWords) {
-        this.verticalWords = verticalWords;
-    }
-
-    public Crossword(List<Word> horizontalWords, List<Word> verticalWords) {
-        this.horizontalWords = horizontalWords;
+    public void setVerticalWords(List<Word> verticalWords) {
         this.verticalWords = verticalWords;
     }
 
     public int countRows() { return horizontalWords.size(); }
     public int countColumns() { return horizontalWords.size(); }
+
+
+    public Crossword(List<Word> horizontalWords, List<Word> verticalWords) {
+        this.horizontalWords = horizontalWords;
+        this.verticalWords = verticalWords;
+    }
 
     public Letter getLetter(int x, int y) {
 
