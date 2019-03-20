@@ -1,5 +1,7 @@
 package com.modulopgave2.client2;
 
+import com.modulopgave2.dal.Repository;
+import com.modulopgave2.dal.WordRepository;
 import com.modulopgave2.dal.WordRepositoryV2;
 import com.modulopgave2.model.Letter;
 import com.modulopgave2.model.Word;
@@ -11,10 +13,29 @@ import java.util.List;
 
 public class Application {
     public static void main(String[] args) throws Exception {
-        WordRepositoryV2 wordRepositoryV2 = new WordRepositoryV2();
+        Repository<Word> wordRepositoryV2 = new WordRepositoryV2();
+
+        List<Letter> letterCri = new ArrayList<>();
+
+        letterCri.add(new Letter(0, 'h', 0));
+        letterCri.add(new Letter(0, 'u', 2));
+
+        Word word = new Word(0, "", letterCri);
+
+        Collection<Word> wordCollection = wordRepositoryV2.find(word);
+
+        Iterator<Word> it = wordCollection.iterator();
+        while (it.hasNext()) {
+
+        }
 
 
-        // build letter criteria
+
+
+
+
+
+        /*// build letter criteria
         List<Letter> letterCriteria = new ArrayList<>();
         letterCriteria.add(new Letter(0, 'h', 0));
         letterCriteria.add(new Letter(0, 'e', 1));
@@ -32,6 +53,6 @@ public class Application {
         while (it.hasNext()) {
             Word word = it.next();
             System.out.println(word.getValue());
-        }
+        }*/
     }
 }

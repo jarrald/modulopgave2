@@ -19,6 +19,7 @@ public class Crosswords {
     cw.setCol(3, 'n','e','j');
     System.out.print(cw);
     //System.out.println( cw.getCol(2) );
+
   }
 
 }

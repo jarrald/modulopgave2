@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Crossword {
+
+    public enum Direction {
+        HORIZONTAL,
+        VERTICAL
+    }
+
     List<Word> horizontalWords;
     List<Word> verticalWords;
 
@@ -46,5 +52,30 @@ public class Crossword {
         }
 
         return result;
+    }
+
+
+    public void addWord(Direction dir, Word word) {
+        switch (dir) {
+            case HORIZONTAL:
+                horizontalWords.add(word);
+                break;
+            case VERTICAL:
+                verticalWords.add(word);
+                break;
+        }
+    }
+
+    public void removeWord(Direction dir, Word word) {
+        switch (dir) {
+            case HORIZONTAL:
+                if(horizontalWords.contains(word))
+                horizontalWords.remove(word);
+                break;
+            case VERTICAL:
+                if(verticalWords.contains(word))
+                    verticalWords.remove(word);
+                break;
+        }
     }
 }
