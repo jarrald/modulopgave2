@@ -33,4 +33,19 @@ public class Crossword {
     public void setCell(int x, int y, char value) {
         grid[x][y] = value;
     }
+
+
+    public String toString() {
+        String result = "";
+
+        for(int y = 0; y < grid[0].length; y++) {
+            for (int x = 0; x < grid.length; x++) {
+                result += grid[x][y];
+            }
+            if(y != grid.length - 1)
+                result += "\n";
+        }
+
+        return result;
+    }
 }

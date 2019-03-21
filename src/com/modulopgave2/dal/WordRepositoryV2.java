@@ -86,7 +86,7 @@ public class WordRepositoryV2 extends WordRepository
             List<Letter> letters = new ArrayList<>();
 
             while(res2.next()) {
-                letters.add(new Letter(res2.getInt("Id"), res.getString("Value").charAt(0), res2.getInt("Offset")));
+                letters.add(new Letter(res2.getInt("Id"), res2.getString("Value").charAt(0), res2.getInt("Offset")));
             }
             word.setLetters(letters);
 

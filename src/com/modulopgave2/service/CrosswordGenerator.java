@@ -1,6 +1,7 @@
 package com.modulopgave2.service;
 
 import com.modulopgave2.model.Crossword;
+import com.modulopgave2.model.Letter;
 import com.modulopgave2.model.Word;
 
 
@@ -23,8 +24,7 @@ public class CrosswordGenerator {
         this.currentCrossword = new Crossword(new char[3][3]);
 
         // sort words by Id
-        Comparator<Word> compareById = (Word o1, Word o2) -> (o2.getId() - o1.getId());
-        Collections.sort(wordList, compareById);
+        Collections.sort(this.wordList, Comparator.comparing((Word o) -> o.getValue()));
     }
 
     public List<Crossword> generateCrosswords(int wordsNeeded) {
@@ -51,8 +51,51 @@ public class CrosswordGenerator {
 
         if(i == 1) {
             wordsToBeUsed = wordList.stream()
-                            .filter(p -> p.getLetter(0) != null)
-                            .collect(Collectors.toList());
+                    .filter(p -> p.getId() != wordsUsed.get(0).getId()
+                            && p.getLetter(0).getValue() == wordsUsed.get(0).getLetter(0).getValue())
+                    .collect(Collectors.toList());
+        }
+
+        if(i == 2) {
+            wordsToBeUsed = wordList.stream()
+                    .filter(p -> p.getId() != wordsUsed.get(0).getId()
+                            && p.getId() != wordsUsed.get(1).getId()
+                            && p.getLetter(0).getValue() == wordsUsed.get(1).getLetter(1).getValue())
+                    .collect(Collectors.toList());
+        }
+
+        if(i == 3) {
+            wordsToBeUsed = wordList.stream()
+                    .filter(p -> p.getId() != wordsUsed.get(0).getId()
+                            && p.getId() != wordsUsed.get(1).getId()
+                            && p.getId() != wordsUsed.get(2).getId()
+                            && p.getLetter(0).getValue() == wordsUsed.get(0).getLetter(1).getValue()
+                            && p.getLetter(1).getValue() == wordsUsed.get(2).getLetter(1).getValue())
+                    .collect(Collectors.toList());
+        }
+
+        if(i == 4) {
+            wordsToBeUsed = wordList.stream()
+                    .filter(p -> p.getId() != wordsUsed.get(0).getId()
+                            && p.getId() != wordsUsed.get(1).getId()
+                            && p.getId() != wordsUsed.get(2).getId()
+                            && p.getId() != wordsUsed.get(3).getId()
+                            && p.getLetter(0).getValue() == wordsUsed.get(1).getLetter(2).getValue()
+                            && p.getLetter(1).getValue() == wordsUsed.get(3).getLetter(2).getValue())
+                    .collect(Collectors.toList());
+        }
+
+        if(i == 5) {
+            wordsToBeUsed = wordList.stream()
+                    .filter(p -> p.getId() != wordsUsed.get(0).getId()
+                            && p.getId() != wordsUsed.get(1).getId()
+                            && p.getId() != wordsUsed.get(2).getId()
+                            && p.getId() != wordsUsed.get(3).getId()
+                            && p.getId() != wordsUsed.get(4).getId()
+                            && p.getLetter(0).getValue() == wordsUsed.get(0).getLetter(2).getValue()
+                            && p.getLetter(1).getValue() == wordsUsed.get(2).getLetter(2).getValue()
+                            && p.getLetter(2).getValue() == wordsUsed.get(4).getLetter(2).getValue())
+                    .collect(Collectors.toList());
         }
 
 
@@ -80,12 +123,20 @@ public class CrosswordGenerator {
         charList.add(words.get(0).getLetter(0).getValue());
         charList.add(words.get(0).getLetter(1).getValue());
         charList.add(words.get(0).getLetter(2).getValue());
-        /*charList.add(words.get(2).getLetter(0).getValue());
+        charList.add(words.get(1).getLetter(1).getValue());
+        charList.add(words.get(1).getLetter(2).getValue());
         charList.add(words.get(2).getLetter(1).getValue());
         charList.add(words.get(2).getLetter(2).getValue());
-        charList.add(words.get(4).getLetter(0).getValue());
-        charList.add(words.get(4).getLetter(1).getValue());
-        charList.add(words.get(4).getLetter(2).getValue());*/
+        charList.add(words.get(3).getLetter(2).getValue());
+        charList.add(words.get(4).getLetter(2).getValue());
+
+        Set<Character> charsFound = new HashSet<>();
+        for(Character c : charList) {
+            if(charsFound.contains(c))
+                return;
+            charsFound.add(c);
+
+        }
 
         // sort chars ASC
         charList.sort(Comparator.naturalOrder());
@@ -95,11 +146,16 @@ public class CrosswordGenerator {
         }
 
 
-        // sort words by Id
-        Comparator<Word> compareById = (Word w1, Word w2) -> (w2.getId() - w1.getId());
-        Collections.sort(words, compareById);
+        /*for (Word word : words) {
+            System.out.print(word.getValue() +", ");
+        }
+        System.out.print("\n");*/
 
-        for (Word word : words) {
+        List<Word> sortedWords = new ArrayList<>(words);
+        // sort words by Value
+        Collections.sort(sortedWords, Comparator.comparing((Word o) -> o.getValue()));
+
+        for (Word word : sortedWords) {
             wordIdsASC += word.getId();
         }
 
@@ -110,9 +166,9 @@ public class CrosswordGenerator {
 
         usedCrosswordsCharacters.add(charsASC);
         foundCrosswords.put(wordIdsASC, new Crossword(new char[][] {
-                new char[] { words.get(0).getLetter(0).getValue(), words.get(0).getLetter(1).getValue(), words.get(0).getLetter(2).getValue() }
-                //new char[] { words.get(2).getLetter(0).getValue(), words.get(2).getLetter(1).getValue(), words.get(2).getLetter(2).getValue() },
-                //new char[] { words.get(4).getLetter(0).getValue(), words.get(4).getLetter(1).getValue(), words.get(4).getLetter(2).getValue() }
+                new char[] { words.get(1).getLetter(0).getValue(), words.get(1).getLetter(1).getValue(), words.get(1).getLetter(2).getValue() },
+                new char[] { words.get(0).getLetter(1).getValue(), words.get(2).getLetter(1).getValue(), words.get(3).getLetter(2).getValue() },
+                new char[] { words.get(0).getLetter(2).getValue(), words.get(2).getLetter(2).getValue(), words.get(4).getLetter(2).getValue() }
         }));
     }
 }
