@@ -21,7 +21,7 @@ public class Application {
 
         CrosswordGenerator cwg = new CrosswordGenerator(wordCollection);
 
-        System.out.println("Finding possible combinations where no crossword have the same set of characters or words \n"
+        System.out.println("Finding possible combinations where no crossword have the same set of characters or words "
                 +"\nand letters can only appear once in each crossword\n");
 
         long startTime = System.nanoTime();

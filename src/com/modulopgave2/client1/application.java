@@ -8,7 +8,7 @@ import com.modulopgave2.service.WordImporter;
 
 import java.util.*;
 
-public class application {
+public class Application {
 
 
     public static void main(String args[])
