@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 
 public class CrosswordGenerator {
     List<Word> wordList;
-    Crossword currentCrossword;
 
     Set<String> usedCrosswordsCharacters = new HashSet<>();
     Map<String, Crossword> foundCrosswords = new HashMap<>();
@@ -21,7 +20,6 @@ public class CrosswordGenerator {
 
     public CrosswordGenerator(Collection<Word> wordCollection) {
         this.wordList = new ArrayList<>(wordCollection);
-        this.currentCrossword = new Crossword(new char[3][3]);
 
         // sort words by Id
         Collections.sort(this.wordList, Comparator.comparing((Word o) -> o.getValue()));
@@ -40,12 +38,7 @@ public class CrosswordGenerator {
     }
 
     private void findNextWord(List<Word> wordsUsed, int wordsNeeded) {
-        if(wordsUsed.size() == wordsNeeded) System.out.println("HEJ");
-
         int i = wordsUsed.size();
-        int relations = (int) Math.floor(i);
-        int x = (int) Math.ceil(i);
-        int y = (int) Math.floor(i);
 
         List<Word> wordsToBeUsed = null;
 
@@ -104,7 +97,7 @@ public class CrosswordGenerator {
             List<Word> wordsUsedCopy = new ArrayList<>(wordsUsed);
             wordsUsedCopy.add(word);
 
-            // if enough words are found
+            // if goal is reached
             if(wordsUsedCopy.size() == wordsNeeded) {
                 addGeneratedCrossWord(wordsUsedCopy);
             }else {

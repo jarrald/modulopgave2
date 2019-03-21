@@ -41,5 +41,28 @@ public class Application {
         catch (Exception e) {
             System.out.println(e);
         }
+
+
+
+        // FIND WORDS FROM LETTER CRITERIA
+        /*// build letter criteria
+        List<Letter> letterCriteria = new ArrayList<>();
+        letterCriteria.add(new Letter(0, 'h', 0));
+        letterCriteria.add(new Letter(0, 'e', 1));
+        letterCriteria.add(new Letter(0, 'j', 2));
+
+        // add criteria to a word criterion
+        Word criteria = new Word(0, "", letterCriteria);
+
+        // find words from criteria
+        Collection<Word> wordList = wordRepositoryV2.find(criteria);
+
+        System.out.println("Words found: "+ wordList.size());
+        // print found words
+        Iterator<Word> it = wordList.iterator();
+        while (it.hasNext()) {
+            Word word = it.next();
+            System.out.println(word.getValue());
+        }*/
     }
 }
