@@ -17,7 +17,12 @@ public class Application {
         Repository<Word> wordRepository = new WordRepositoryV2();
         Collection<Word> wordCollection = wordRepository.list();
 
+        System.out.println("Words loaded: " + wordCollection.size());
+
         CrosswordGenerator cwg = new CrosswordGenerator(wordCollection);
+
+        System.out.println("Finding possible combinations where no crossword have the same set of characters or words \n"
+                +"\nand letters can only appear once in each crossword\n");
 
         long startTime = System.nanoTime();
         cwg.generateCrosswords(6);
